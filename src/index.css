@@ -9,6 +9,8 @@
   --clr-green-11: #fafdfa;
 
   --clr-gold: #c59d5f;
+
+  --arrow-btn-clr: #E5E7EB;
 }
 body {
   margin: 0;
@@ -25,7 +27,8 @@ body {
   box-sizing: border-box;
 }
 .App{
-  /* background-color: #fafdfa; */
+  display: flex;
+  flex-direction: column;
 }
 h3{
   font-size: 2rem;
@@ -153,12 +156,111 @@ h3{
   object-fit: cover;
   opacity: 0.6;
 }
+.reviews{
+  position: relative;
+  max-width: 670px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.review-cards{
+  display: flex;
+  width: 80vw;
+
+  position: relative;
+  margin: 0 auto;
+  max-width: 550px;
+  overflow: hidden;
+
+  height: 280px;
+}
+
+.review-card{
+  height: 280px;
+  width: 100%;
+  background-color: var(--clr-grey-10);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border-radius: 0.1rem;
+  padding: 0.5rem;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+.review-card.prevReview{
+  transform: translateX(-100%);
+}
+.review-card.activeReview{
+  opacity: 1;
+  transform: translateX(0);
+}
+.review-card.nextReview{
+  transform: translateX(100%);
+}
+
+.review-top{
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  align-items: center;
+}
+.review-profile{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+.profile-pic{
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid 0.1rem var(--clr-gold);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.review-profile > h5{
+  margin: 0;
+  text-align: center;
+}
+
+.review-title, .review-recipe-title{
+  margin: 0;
+}
+.review-title{
+  font-size: 0.9rem;
+  color: var(--clr-gold);
+}
+.review-recipe-title{
+  font-size: 0.73rem;
+}
+.review-desc{
+  font-size: 13px;
+}
+.review-stars{
+  font-size: 12px;
+}
+.prev, .next{
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1.9rem;
+  color: var(--arrow-btn-clr);
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+}
+.prev{ left: -0.6rem; }
+.next{ right: 0.2rem; }
 
 @media screen and (min-width: 350px) {
   .recipe-container > h3{
     font-size:1.5rem;
   }
-
+  .review-card, .review-cards{
+    height: 250px;
+  }
 }
 
 @media screen and (min-width: 506px) {
@@ -188,6 +290,19 @@ h3{
   .recipe-ingredient-btn, .recipe-instruction-btn{
     height: 2.3rem;
   }
+  .profile-pic{
+    width: 4rem;
+    height: 4rem;
+  }
+  .review-title{
+    font-size: 1.1rem;
+  }
+  .review-desc{
+    font-size: 16px;
+  }
+  .review-recipe-title{
+    font-size: 0.83rem;
+  }
 }
 
 @media screen and (min-width: 670px) {
@@ -206,10 +321,7 @@ h3{
     width: 80vw;
     max-width: 700px;
 
-    position: fixed;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, 0);
+    align-self: center;
   }
 }
 

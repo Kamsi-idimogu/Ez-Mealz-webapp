@@ -4,6 +4,7 @@ import Axios from 'axios';
 import { AiOutlineSearch } from "react-icons/ai";
 import { useState } from 'react';
 import Recipe from './components/Recipe';
+import Reviews from './components/Reviews';
 
 
 //get svg logo for website
@@ -46,7 +47,11 @@ const TextChange = (event) => {
       </div>
 
       {recipeList.length ? <div className="recipes">{recipeList.map((recipe) => <Recipe content={recipe}/>)}</div> : <img src={placeholder} className='placeholder-img'/>}
+      <p>hi people tried the recipe here are some reviews</p>
+
+      <Reviews/>
       
+      <h1>bottom</h1>
     </div>
   );
 }
