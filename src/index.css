@@ -1,8 +1,10 @@
 :root{
+  --clr-gray-1: hsl(210, 22%, 49%);
   --clr-grey-7: hsl(211, 27%, 70%);
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
 
+  --clr-green-3: #004d00;
   --clr-green-7: #cce6cc;
   
   --clr-green-10: #e6f2e6;
@@ -11,6 +13,9 @@
   --clr-gold: #c59d5f;
 
   --arrow-btn-clr: #E5E7EB;
+  --hover-clr: hsl(211, 39%, 23%);
+
+  --transition: all 0.3s linear;
 }
 body {
   margin: 0;
@@ -21,14 +26,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: var(--clr-green-11);
-
 }
 *{
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 .App{
   display: flex;
   flex-direction: column;
+}
+.App.show{
+  overflow: hidden;
+  height: 100vh;
 }
 h3{
   font-size: 2rem;
@@ -36,6 +47,9 @@ h3{
 
 .header{
   padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .header-links{
   display: none;
@@ -74,10 +88,11 @@ h3{
   font-size: large;
   outline-width: 0;
   text-indent: 0.6rem;
-  max-width: 80%;
+  max-width: 95%;
+  background-color: transparent;
 }
 .search-icon{
-  width: 1.4rem;
+  min-width: 1.4rem;
   height: 2rem;
   color: var(--clr-grey-7);
   margin-left: 0.4rem;
@@ -103,6 +118,10 @@ h3{
   display: flex;
   flex-direction: column;
   background-color: var(--clr-grey-10);
+  transition: all 0.3s linear;
+}
+.recipe-container:hover{
+  scale: 1.05;
 }
 
 .recipe-img{
@@ -140,15 +159,19 @@ h3{
   border: solid 0.1rem var(--clr-grey-9);
   border: solid 0.1rem black;
   font-size: 1rem;
+  cursor: pointer;
 }
 
-.recipe-ingredient-btn{
-  
+.recipe-ingredient-btn:hover{
+  background-color: var(--clr-grey-9);
 }
 
 .recipe-instruction-btn{
   color: white;
   background-color: black;
+}
+.recipe-instruction-btn:hover{
+  background-color: hsl(210, 22%, 49%);
 }
 
 .placeholder-img{
@@ -254,6 +277,208 @@ h3{
 .prev{ left: -0.6rem; }
 .next{ right: 0.2rem; }
 
+.prev:hover, .next:hover{
+  color: var(--hover-clr);
+}
+
+.submenu{
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  padding: 1rem 0 2rem;
+  text-transform: capitalize;
+  transform: translateX(-50%);
+  transition: var(--transition);
+  display: none;
+}
+.submenu::before{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  z-index: 10;
+  transform: translateX(-50%);
+}
+.submenu.show {
+  display: block;
+}
+.submenu h4{
+  margin-top: 0;
+  margin-bottom: 1.1rem;
+  font-size: 1rem;
+}
+.submenu a, .section a{
+  text-decoration: none;
+  color: var(--clr-gray-1);
+}
+.submenu a{
+  font-size: 0.9rem;
+  padding: 0.8rem 3rem;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.submenu a:hover, .section a:hover{
+  background-color: var(--clr-green-7);
+}
+.links{
+  display: flex;
+  flex-direction: column;
+}
+.section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.section a{
+  border: solid 0.1px rgba(0, 0, 0, 0.1);
+}
+.sections h4{
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+.item{
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.link-btn{
+  text-transform: capitalize;
+  font-size: 0.85rem;
+  border: none;
+  background-color: transparent;
+  font-weight: 600;
+  padding: 0 1rem 1rem;
+}
+
+.btn{
+  background-color: black;
+  color: white;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+.nav-btn{
+  width: 2.5rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.7rem;
+}
+.nav-btn:hover{
+  background-color: rgb(0, 0, 0,0.7);
+}
+.header-btn{
+  cursor: pointer;
+}
+.header-btn:hover{
+  color: var(--clr-green-3);
+  scale: 1.1;
+}
+
+.sidebar-background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: -1;
+}
+.sidebar-background.show{
+  visibility: visible;
+  z-index: 2;
+}
+.sidebar{
+  background-color: white;
+  width: 90%;
+  height: 90%;
+
+  max-width: 700px;
+  max-height: 900px;
+  overflow: scroll;
+
+  border-radius: 1.2rem;
+  position: relative;
+  padding: 0.2rem 1rem;
+  transition: var(--transition);
+  transform: scale(0);
+}.sidebar.show{
+  transform: scale(1);
+}
+.close-btn{
+  position: absolute;
+  top: 10px;
+  right: 6px;
+  font-size: 1.6rem;
+  color: var(--clr-gray-1);
+  border: none;
+  background-color: transparent;
+}
+.close-btn:hover{
+  color: rgb(150, 21, 21);
+  cursor: pointer;
+}
+.section{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.sections{
+  text-transform: capitalize;
+}
+
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid black;
+  padding: 8px;
+}
+thead {
+  background-color:  rgb(46, 152, 14);
+	color: black;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	letter-spacing: 2%;
+}
+tbody tr:nth-child(odd) {
+  background-color: #fff;
+}
+tbody tr:nth-child(even) {
+  background-color: #eee;
+}
+.message-content{
+  display: flex;
+  flex-direction: column;
+}
+.message-content > p{
+  /* font-weight: bold; */
+  text-decoration: underline;
+}
+.message-content > a{
+  text-transform: uppercase;
+  margin: 1rem auto;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: rgb(46, 152, 14);
+  align-self: center;
+}
+th,td{
+  font-size: 0.7rem;
+}
 @media screen and (min-width: 350px) {
   .recipe-container > h3{
     font-size:1.5rem;
@@ -261,14 +486,22 @@ h3{
   .review-card, .review-cards{
     height: 250px;
   }
+  th,td{
+    font-size: 0.95rem;
+  }
+  .message-content > p{
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (min-width: 506px) {
+  .nav-btn{
+    display: none;
+  }
   .header-links{
     display: flex;
     text-decoration: none;
     list-style: none;
-    gap: 2rem;
   }
   .header{
     display: flex;
@@ -322,6 +555,12 @@ h3{
     max-width: 700px;
 
     align-self: center;
+  }
+  .link-btn{
+    font-size: 1.1rem;
+  }
+  .submenu a{
+    font-size: 1rem;
   }
 }
 
