@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
 import Axios from 'axios';
 import {useJsApiLoader, GoogleMap, Marker, Autocomplete} from '@react-google-maps/api';
+// import { GeoapifyGeocoderAutocomplete, GeoapifyContext } from '@geoapify/react-geocoder-autocomplete'
+import '@geoapify/geocoder-autocomplete/styles/minimal.css'
 
 const center = {lat: 43.7543,lng:-79.4491};
 
@@ -49,11 +51,24 @@ const Restaurant = () => {
         'X-RapidAPI-Host': 'travel-advisor.p.rapidapi.com'
     }
     };
-
+    /* RADPIDAPI AXIOS*/
     // Axios.request(options).then(function (response) {
     //     console.log(response.data);
     // }).catch(function (error) {
     //     console.error(error);
+    // });
+
+    /* GEOAPIFY AXIOS*/
+    // const config = {
+    //     method: 'GET',
+    //     url: 'https://api.geoapify.com/v1/geocode/autocomplete?text=Mosco&apiKey=138121f2b688405ebe2aec6e64d47bc1',
+    //     headers: { }
+    // };
+
+    // Axios.request(config).then(function (response) {
+    //     console.log(response.data)
+    // }).catch(function (error){
+    //     console.log(error)
     // });
 
     /*
@@ -62,6 +77,27 @@ const Restaurant = () => {
         <Input type='text' placeholder='Your Address' ref={originRef}/>
     </Autocomplete>
     */
+
+    // function onPlaceSelect(value) {
+    //     console.log(value);
+    //   }
+     
+    //   function onSuggectionChange(value) {
+    //     console.log(value);
+    //   }
+
+    // return <GeoapifyContext apiKey="138121f2b688405ebe2aec6e64d47bc1">
+    //   <GeoapifyGeocoderAutocomplete placeholder="Enter address here"
+    //     // type='street'
+    //     // lang='en'
+    //     // position={position}
+    //     // countryCodes='auto'
+    //     // limit='5'
+    //     // value='Canada'
+    //     placeSelect={onPlaceSelect}
+    //     suggestionsChange={onSuggectionChange}
+    //     />
+    // </GeoapifyContext>
     return (
         <div>
             <p>restaurants</p>

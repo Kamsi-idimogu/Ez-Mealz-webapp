@@ -96,7 +96,7 @@ const {isSidebarOpen, closeSidebar} = useContext(AppContext)
             <button className="link-btn" onMouseOver={showSubMenu}>Cuisine</button>
           </li>
           <li>
-          <a href='#eat_out'><button className="link-btn header-btn">Eat out</button></a>
+          <a href='#eat_out'><button onMouseOver={closeSubMenu} className="link-btn header-btn">Eat out</button></a>
           </li>
         </ul>
 
