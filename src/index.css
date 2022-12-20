@@ -20,6 +20,13 @@
   --arrow-btn-clr: #E5E7EB;
   --hover-clr: hsl(211, 39%, 23%);
 
+  --icon-blue: #0a66c2;
+  --icon-grey1: #646170;
+  --icon-grey-2: #a6a3b0;
+  --icon-red-1: #F55A5A;
+  --icon-red-2: #DA2D7A;
+
+
   --transition: all 0.3s linear;
 }
 body {
@@ -701,7 +708,18 @@ th,td{
   font-size: small;
   text-align: center;
 }
-
+.blue:hover{
+  color: var(--icon-blue);
+  cursor: pointer;
+}
+.red:hover{
+  color: var(--icon-red-2);
+  cursor: pointer;
+}
+.grey:hover{
+  color: var(--icon-grey1);
+  cursor: pointer;
+}
 
 @media screen and (min-width: 350px) {
   .recipe-container > h3{
@@ -775,6 +793,9 @@ th,td{
   }
   .intro-section > h3, .main > h3{
     font-size: 1.6rem;
+  }
+  .featured-info{
+    padding-right: 1rem;
   }
   .featured-icon{
     display: block;
