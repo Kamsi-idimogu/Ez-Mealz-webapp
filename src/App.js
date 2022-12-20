@@ -13,6 +13,7 @@ const App = () => {
 
   return (
     <div className={isSidebarOpen ? 'App show':'App'}>
+    {/* <div className='App'> */}
       <Header />
       <Submenu />
       <PopUpBox />

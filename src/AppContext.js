@@ -10,6 +10,7 @@ function ContextProvider({children}){
     const [isSubmenuOpen, setIsSubmenuOpen] = useState(false)
     const [location, setLocation] = useState({})
     const [page, setPage] = useState({ page: '', links: []})
+    const [YOffSet, setYOffSet] = useState(0)
 
     function openSubMenu(text,coordinates){
         const page = sublinks.find((link) => link.page === text)
@@ -35,6 +36,9 @@ function ContextProvider({children}){
         closeSidebar()
         setIsPopUpOpen(false)
     }
+    function updateYOffSet(value){
+        setYOffSet(value)
+    }
 
     return(
         <AppContext.Provider 
@@ -50,7 +54,9 @@ function ContextProvider({children}){
                 openPopUp,
                 closePopUp,
                 isPopUpOpen,
-                popUpMessage
+                popUpMessage,
+                YOffSet, 
+                updateYOffSet,
             }}
         >
             {children}

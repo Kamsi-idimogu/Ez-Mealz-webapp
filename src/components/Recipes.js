@@ -12,7 +12,7 @@ const Recipe = () => {
 
     const [timeoutid, UpdateTimeoutId] = useState();
     const [recipeList, UpdateRecipeList] = useState([]);   
-    const {openPopUp} = useContext(AppContext)
+    const {openPopUp,updateYOffSet} = useContext(AppContext)
 
     const [isLoaded, setIsloaded] = useState(false);
 
@@ -38,6 +38,11 @@ const Recipe = () => {
             }
         });
     });
+
+    const handlePopUp = (content) => {
+        openPopUp(content)
+        updateYOffSet(window.scrollY);
+    }
 
     const hiddenElements = document.querySelectorAll('.hidden'); //geoapify-close-button for later, close button for restaurant search
     
@@ -71,7 +76,7 @@ const Recipe = () => {
                         if(isLeft){
                             isLeft = false;
                             return(
-                                <div className="featured-card left hidden">
+                                <div className="featured-card left hidden" key={item.id}>
                                     <RxDragHandleDots2 className='featured-icon' />
                                     <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
                                         <img src={item.image} alt='featured image'/>
@@ -86,7 +91,7 @@ const Recipe = () => {
                         else{
                             isLeft = true;
                             return(
-                                <div className="featured-card right hidden">
+                                <div className="featured-card right hidden" key={item.id}>
                                     <RxDragHandleDots2 className='featured-icon' />
                                     <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
                                         <img src={item.image} alt='featured image'/>
@@ -112,13 +117,13 @@ const Recipe = () => {
 
             {
                 recipeList.length ? 
-                    <div className="recipes">{recipeList.map((item) => {
+                    <div className="recipes">{recipeList.map((item,index) => {
                         return (
-                            <div className="recipe-container" >
+                            <div className="recipe-container" key={index}>
                             <img alt='Meal image' src={item.recipe.image} className='recipe-img'/>
                             <h3>{item.recipe.label}</h3>
                             <div className="recipe-btns">
-                              <button className="recipe-ingredient-btn" onClick={() => openPopUp(item.recipe)}>Ingredient</button>
+                              <button className="recipe-ingredient-btn" onClick={() => handlePopUp(item.recipe)}>Ingredient</button>
                               <button className="recipe-instruction-btn" onClick={() => window.open(item.recipe.url)}>Instructions</button>
                             </div>
                           </div>
