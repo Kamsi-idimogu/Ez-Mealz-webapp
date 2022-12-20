@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
-import sublinks from "./menu-data";
+import React, { useContext } from 'react';
+import sublinks from './data/menu-data';
 import { AppContext } from '../AppContext';
-import { FaTimes } from "react-icons/fa";
+import { FaTimes } from 'react-icons/fa';
 
 export default function PopUpBox(){
     const {isSidebarOpen, closeSidebar,isPopUpOpen,closePopUp,popUpMessage} = useContext(AppContext)

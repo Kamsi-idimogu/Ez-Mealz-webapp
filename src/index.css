@@ -4,6 +4,8 @@
   --clr-grey-9: hsl(212, 33%, 89%);
   --clr-grey-10: hsl(210, 36%, 96%);
 
+  --clr-grey-1: #918E9B;
+
   --clr-green-3: #004d00;
   --clr-green-7: #cce6cc;
   
@@ -11,6 +13,9 @@
   --clr-green-11: #fafdfa;
 
   --clr-gold: #c59d5f;
+  --clr-light-gold: #ffca7a;
+
+  --clr-red-1: #F55A5A;
 
   --arrow-btn-clr: #E5E7EB;
   --hover-clr: hsl(211, 39%, 23%);
@@ -45,8 +50,16 @@ h3{
   font-size: 2rem;
 }
 
+.header-container{
+  background-image: url('./images/banner1.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  height: 250px;
+}
 .header{
-  padding: 0 0.5rem;
+  padding: 2rem 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,11 +67,23 @@ h3{
 .header-links{
   display: none;
 }
+.intro-section{
+  max-width: 85vw;
+  margin: 0 auto;
+}
+.intro-section > h3{
+  font-size: 1.4rem;
+  font-weight: 500;
+  max-width: 1000px;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.intro-section > h4{
+  font-weight: 300;
+  font-size: 1.1rem;
+}
 .main{
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
   margin-bottom: 9rem;
 }
 .main > h3{
@@ -67,16 +92,98 @@ h3{
   font-weight: 300;
   margin-bottom: 4rem;
   text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
 }
+.featured-box-background{
+  background-image: url(./images/bck-img-1.png);
+  background-attachment: fixed;
+}
+.featured-box{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 2rem 3rem;
+  margin-bottom: 4rem;
+  max-width: 1800px;
+  margin: 0 auto 4rem;
+  overflow: hidden; 
+}
+.featured-card:hover{
+  scale: 1.02;
+}
+.featured-icon{
+  position: absolute;
+  left: -10%;
+  color: var(--clr-grey-1);
+  font-size: 2.5rem;
+  margin: 0;
+  padding: 0;
+  display: none;
+}
+.featured-card > img{
+  width: 50%;
+  flex-shrink: 0;
+  margin-right: 1rem;
+}
+.featured-card > a{
+  margin-right: 1rem;
+  width: 50%;
+  flex-shrink: 0;
+}
+.featured-card > a > img{
+  width: 100%;
+}
+.left{
+  align-self: flex-end;
+}
+.right{
+  align-self: flex-start;
+}
+.featured-card{
+  max-width: 450px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: var(--clr-grey-10);
+  border: 0.15rem solid var(--clr-gold);
+}
+.featured-info > h2{
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--clr-gold);
+}
+.featured-info > p{
+  font-size: 0.4rem;
+}
+.right.hidden{
+  transform: translateX(50%);
+  opacity: 0;
+}
+.left.hidden{
+  transform: translateX(-50%);
+  opacity: 0;
+}
+.hidden{
+  filter: blur(5px);
+  transition: all 1s;
+}
+.left.visible, .right.visible{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
 .search-box{
   display: flex;
   width: 70vw;
+  max-width: 800px;
   margin: 0 auto;
   align-items: center;
   border-radius: 0.6rem;
   border: solid 0.1rem var(--clr-grey-9);
   background-color: white;
-  max-width: 800px;
 }
 .search-box:hover{
   border: solid 0.1rem var(--clr-grey-9);
@@ -179,10 +286,20 @@ h3{
   object-fit: cover;
   opacity: 0.6;
 }
+.reviews-container{
+  margin: 5rem 0;
+  height: 500px;
+  background-image: url(./images/banner2.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+}
 .reviews{
   position: relative;
   max-width: 670px;
-  margin: 0 auto;
+  margin: 125px auto;
   padding: 0 2rem;
 }
 .review-cards{
@@ -203,13 +320,19 @@ h3{
   background-color: var(--clr-grey-10);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   border-radius: 0.1rem;
-  padding: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.8rem;
+  border: 0.15rem solid var(--clr-gold);
 
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
   transition: all 0.3s linear;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .review-card.prevReview{
   transform: translateX(-100%);
@@ -278,7 +401,7 @@ h3{
 .next{ right: 0.2rem; }
 
 .prev:hover, .next:hover{
-  color: var(--hover-clr);
+  color: var(--clr-light-gold);
 }
 
 .submenu{
@@ -465,7 +588,6 @@ tbody tr:nth-child(even) {
   flex-direction: column;
 }
 .message-content > p{
-  /* font-weight: bold; */
   text-decoration: underline;
 }
 .message-content > a{
@@ -479,6 +601,108 @@ tbody tr:nth-child(even) {
 th,td{
   font-size: 0.7rem;
 }
+.restaurant-section{
+  margin: 0 auto;
+}
+.rest-container{
+  width: 70vw;
+  max-width: 800px;
+  margin: 3rem auto 0;
+}
+.restaurant-item{
+  display: flex;
+  gap: 0.6rem;
+  margin: 0 0 0.7rem;
+}
+.restaurant-item > p{
+  font-size: small;
+  margin: 0;
+}
+.restaurant-item > a{
+  text-decoration: none;
+  color: black;
+  font-size: small;
+}
+.restaurant-icon{
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+}
+.restaurant-card{
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
+}
+.restaurant-card > div{
+  padding: 0 1rem 1rem;
+}
+
+.restaurant-card > img{
+  object-fit: cover;
+  width: 100%;
+  max-height: 21rem;
+}
+
+.footer{
+  background-color: var(--clr-green-7);
+  padding: 2rem;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 7rem;
+}
+.footer-info{  
+  display: grid;
+  grid-template-columns: 100%;
+  
+  justify-content: space-between;
+
+  margin: 0 auto 3rem;
+  width: 80vw;
+}
+.footer a {
+  text-decoration: none;
+  color: black;
+}
+.footer a:hover{
+  color: var(--clr-green-3);
+}
+.footer ul{
+  list-style-type: none;
+  padding: 0;
+}
+.footer-title{
+  font-size: large;
+  text-decoration: underline;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.footer-icon{
+  font-size: 1.5rem;
+  margin: 0.3rem;
+}
+.footer-links li{
+  font-size: large;
+  margin-bottom: 0.3rem;
+}
+.underline{
+  background-color: black;
+  height: 1px;
+  width: 85vw;
+  margin: 0 auto;
+}
+.copyright-container{
+  justify-self: flex-end;
+}
+.copyright > div{
+  font-size: small;
+  text-align: center;
+}
+
+
 @media screen and (min-width: 350px) {
   .recipe-container > h3{
     font-size:1.5rem;
@@ -491,6 +715,15 @@ th,td{
   }
   .message-content > p{
     font-size: 1.1rem;
+  }
+  .intro-section > h4{
+    font-size: 1.3rem;
+  }
+  .featured-info > h2{
+    font-size: 0.8rem;
+  }
+  .featured-info > p{
+    font-size: 0.45rem;
   }
 }
 
@@ -536,6 +769,22 @@ th,td{
   .review-recipe-title{
     font-size: 0.83rem;
   }
+  .restaurant-section{
+    width: 85vw;
+    max-width: 1080px;
+  }
+  .intro-section > h3, .main > h3{
+    font-size: 1.6rem;
+  }
+  .featured-icon{
+    display: block;
+  }
+  .featured-card > a{
+    margin-left: 1rem;
+  }
+  .footer-info{
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (min-width: 670px) {
@@ -562,10 +811,88 @@ th,td{
   .submenu a{
     font-size: 1rem;
   }
+
+  .restaurant-card > div > h4{
+    font-size: 1.2rem;
+  }
+  .restaurant-item > p , .restaurant-item > a{
+    font-size: medium;
+  }
+  .intro-section > h4{
+    font-size: 1.7rem;
+  }
+  .reviews{
+    max-width: 800px;
+  }
+  .review-card, .review-cards{
+    height: 350px;
+  }
+  .review-cards{
+    max-width: 700px;
+  }
+  .review-card{
+    padding: 2rem;
+    gap: 1.5rem;
+  }
+  .review-top{
+    scale: 1.05;
+  }
+  .featured-card{
+    height: 350px;
+  }
+  .featured-card{
+    max-width: 550px;
+  }
+  .featured-info > h2{
+    font-size: 1.3rem;
+  }
+  .featured-info > p{
+    font-size: 0.7rem;
+  }
+  .featured-icon{
+    font-size: 3rem;
+  }
+  .next{ right: -0.1rem; }
+
+  .copyright > div{
+    font-size: large;
+  }
+  .footer-links li{
+    font-size: larger;
+  }
 }
 
 @media screen and (min-width: 1050px) {
   .recipes{
     grid-template-columns: 1fr 1fr 1fr;
+  }
+  .intro-section > h3, .main > h3{
+    font-size: 2rem;
+  }
+  .featured-card{
+    max-width: 800px;
+    height: 450px;
+  }
+  .featured-box{
+    padding-left: 5rem;
+  }
+  .featured-info > h2{
+    font-size: 1.5rem;
+  }
+  .featured-info > p{
+    font-size: 0.9rem;
+  }
+  .footer-info{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .follow-us > ul{
+    display: flex;
+    gap: 0.6rem;
+  }
+  .footer-title{
+    min-width: 96px;
+  }
+  .footer-links li{
+    font-size: 1.3rem;
   }
 }

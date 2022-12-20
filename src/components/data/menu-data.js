@@ -1,4 +1,4 @@
-import { MdOutlineLunchDining,MdOutlineEmojiFoodBeverage } from 'react-icons/md';
+import { MdOutlineEmojiFoodBeverage } from 'react-icons/md';
 import { BiDrink } from 'react-icons/bi';
 import { GiChickenOven } from 'react-icons/gi';
 import { IoFastFoodOutline } from 'react-icons/io5';

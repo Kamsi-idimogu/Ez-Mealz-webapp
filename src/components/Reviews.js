@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from "react";
-import logo from '../logo.svg'
+import React, { useState, useEffect } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
-import reviewsData from './review-data';
+import reviewsData from './data/review-data';
 
 const Reviews = () => {
     const [reviews, updateReviews] = useState(reviewsData);
@@ -15,32 +14,34 @@ const Reviews = () => {
       const newPosition = ((reviews.length - 1) + index) % reviews.length
       setIndex(newPosition)
     }
-  
+
     /*    Auto Slider    */
     useEffect(() => {
-      const autoSlide = setInterval(() => {
-        stepForward();
-      },3000) // runs every 3000ms(3 seconds)
-  
-      return () => clearInterval(autoSlide) //clean-up function
-  
-    },[index])//this useEffect will only run when `index` is changed
+        const autoSlide = setInterval(() => {
+            stepForward();
+        },5000) // runs every 5000ms(5 seconds)
+    
+        return () => clearInterval(autoSlide) //clean-up function
+    
+        },[index])//this useEffect will only run when `index` is changed
 
     return(
+        <div className="reviews-container">
         <nav className="reviews">
+            <button className="prev" onClick={stepBackward}><FiChevronLeft/></button>
             <div className="review-cards">
-              {reviews.map((review,currentIndex) => {
+                {reviews.map((review,currentIndex) => {
     
                 let position = 'nextReview'
                 if(currentIndex === index) {
-                  position='activeReview'
+                    position='activeReview'
                 }
                 if(currentIndex === index - 1 || (index === 0 && currentIndex === review.length-1)){
-                  position = 'prevReview'
+                    position = 'prevReview'
                 }
 
                 return(
-                  <div key={review.id} className={`review-card ${position}`}>
+                    <div key={review.id} className={`review-card ${position}`}>
                     {/* picture, review title, recipe title, name of person, review rating in stars, review description, maybe date*/}
                     <div className="review-top">
                     <div className="review-profile">
@@ -56,13 +57,14 @@ const Reviews = () => {
                     <nav className="review-desc">{review.info}</nav>
                 </div>
                 )})
-              }
+                }
                 
             </div>
-            <button className="prev" onClick={stepBackward}><FiChevronLeft/></button>
             <button className="next" onClick={stepForward}><FiChevronRight/></button>
         </nav>
+        </div>
     );
+
 };
 
 export default Reviews;

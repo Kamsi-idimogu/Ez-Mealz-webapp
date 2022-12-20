@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import sublinks from "./components/menu-data";
+import sublinks from "./components/data/menu-data";
 
 const AppContext = React.createContext();
 
