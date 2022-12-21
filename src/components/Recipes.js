@@ -41,7 +41,13 @@ const Recipe = () => {
 
     const handlePopUp = (content) => {
         openPopUp(content)
+
         updateYOffSet(window.scrollY);
+
+        const appElement = document.querySelectorAll('.App');
+
+        appElement.forEach((e) => e.classList.add('show'))
+        
     }
 
     const hiddenElements = document.querySelectorAll('.hidden'); //geoapify-close-button for later, close button for restaurant search

@@ -112,9 +112,10 @@ h3{
   gap: 5rem;
   padding: 2rem 3rem;
   margin-bottom: 4rem;
-  max-width: 1800px;
+  max-width: 1610px;
   margin: 0 auto 4rem;
   overflow: hidden; 
+  background-color: rgb(204, 230, 204,0.7);
 }
 .featured-card:hover{
   scale: 1.02;
@@ -539,7 +540,7 @@ h3{
 
   max-width: 700px;
   max-height: 900px;
-  overflow: scroll;
+  overflow: auto;
 
   border-radius: 1.2rem;
   position: relative;

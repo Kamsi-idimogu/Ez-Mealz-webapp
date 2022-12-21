@@ -4,11 +4,20 @@ import { AppContext } from '../AppContext';
 import { FaTimes } from 'react-icons/fa';
 
 export default function PopUpBox(){
-    const {isSidebarOpen, closeSidebar,isPopUpOpen,closePopUp,popUpMessage,YOffSet,updateYOffSet} = useContext(AppContext)
+    const {isSidebarOpen, closeSidebar,isPopUpOpen,closePopUp,popUpMessage,YOffSet} = useContext(AppContext)
 
     const handleClose = () => {
         if(YOffSet){
-            window.scrollTo(0, YOffSet);
+            const appElement = document.querySelectorAll('.App');
+
+            appElement.forEach((el) => el.classList.remove("show"))
+
+            window.scrollTo(
+                {
+                    top: YOffSet,
+                    left: 0,
+                    behaviour: 'instant'
+                });
         }
 
         closePopUp()
