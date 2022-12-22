@@ -50,7 +50,7 @@ const Recipe = () => {
         
     }
 
-    const hiddenElements = document.querySelectorAll('.hidden'); //geoapify-close-button for later, close button for restaurant search
+    const hiddenElements = document.querySelectorAll('.hidden');
     
     if(isLoaded){
         hiddenElements.forEach((ele) => observer.observe(ele))

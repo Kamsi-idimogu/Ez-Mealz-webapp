@@ -9,17 +9,17 @@ const Restaurant = () => {
   const RAPIDAPI_KEY = '0d337f583bmsh999b4c1904c11ffp10afadjsnc5641f48ece2';
   const RAPIDAPI_HOST = 'travel-advisor.p.rapidapi.com';
 
-  // const center = {lat: 43.7543,lng:-79.4491};
-  const center = {lat: 12.91285,lng: 100.87808};
-
   const [restaurants,UpdateRestaurants] = useState([]);
+  const [notFound,setNotFound] = useState(false);
 
 
   async function onPlaceSelect(value) {
-    const coordinates = value.geometry.coordinates;
-    // const coordinates = [center.lng,center.lat];
+    if(value === null)
+        return;
+    
+    const axis = value.geometry.coordinates;
 
-    // UpdateCoordinates(value.geometry.coordinates); // [lon,lat]
+    const coordinates = isNaN(axis[0]) ? axis[0][0] : axis
 
     const options = {
       method: 'GET',
@@ -41,11 +41,13 @@ const Restaurant = () => {
     };
       /* RADPIDAPI AXIOS*/
     await Axios.request(options).then(function (response) {
-        console.log(response.data.data);
-        if(response.data){
+        if(response.data && response.data.data.length !== 0){
           UpdateRestaurants(response.data.data)
-        }else{
+          setNotFound(false)
+        }
+        else{
           UpdateRestaurants([])
+          setNotFound(true)
         }
     }).catch(function (error) {
         console.error(error);
@@ -56,8 +58,15 @@ const Restaurant = () => {
     // console.log(value);
   }
 
+  const closeBtn = document.querySelectorAll('.geoapify-close-button');
+  
+  if(closeBtn.length !== 0){
+    closeBtn.forEach((btn) => {btn.onclick = function() {
+    UpdateRestaurants([]);
+    setNotFound(false)
 
-
+  }})
+  }
 
   return (
     <section className="restaurant-section">
@@ -72,11 +81,14 @@ const Restaurant = () => {
         />
       </GeoapifyContext>
 
+      { notFound ? 
+      <h1>Not found</h1> 
+      :
       <section className="rest-container">
         {restaurants.map((item) => {
           if(item.name)
           return(
-            <div className="restaurant-card">
+            <div className="restaurant-card" key={item.location_id}>
               <img src={item.photo ? item.photo.images.large.url : "https://media-cdn.tripadvisor.com/media/photo-w/0e/65/c0/cf/ma-der-la-by-phuthai.jpg"} alt="Restaurant logo"/>
               <div>
                 <h4>{item.name}</h4>
@@ -104,6 +116,7 @@ const Restaurant = () => {
           )
         })}
       </section>
+      }
     </section>
   );
 };
