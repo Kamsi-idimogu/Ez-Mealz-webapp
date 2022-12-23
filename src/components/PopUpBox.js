@@ -10,7 +10,7 @@ export default function PopUpBox(){
         if(YOffSet){
             const appElement = document.querySelectorAll('.App');
 
-            appElement.forEach((el) => el.classList.remove("show"))
+            appElement.forEach((el) => el.classList.remove('show'))
 
             window.scrollTo(
                 {
@@ -36,14 +36,14 @@ export default function PopUpBox(){
                         <thead>
                             <tr>
                                 <th>Intgerdients</th>
-                                <th>Weight</th>
+                                <th>Weight (grams)</th>
                             </tr>
                         </thead>
                         <tbody>
                             {popUpMessage.ingredients.map((item,index) => (
                                 <tr key={index}>
                                     <td>{item.text}</td>
-                                    <td>{item.weight}</td>
+                                    <td>{Number.isInteger(item.weight) ? item.weight : item.weight.toFixed(2)}</td>
                                 </tr>
                             ))}
                         </tbody>
