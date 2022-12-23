@@ -31,11 +31,9 @@
 }
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Exo',-apple-system, sans-serif;
 
   background-color: var(--clr-green-11);
 }
@@ -63,7 +61,15 @@ h3{
   background-repeat: no-repeat;
   background-size: cover;
 
-  height: 250px;
+  height: 550px;
+  z-index: 0;
+}
+.header-container > h3{
+  text-align: center;
+  max-width: 1250px;
+  margin: 120px auto;
+  text-transform: uppercase;
+  font-weight: 600;
 }
 .header{
   padding: 2rem 0.5rem 0;
@@ -74,21 +80,33 @@ h3{
 .header-links{
   display: none;
 }
+.intro-section-container{
+  position: relative;
+}
+.intro-side-img{
+  display: none;
+  position: absolute;
+  opacity: 0.64;
+  height: 800px;
+  top: 200px;
+}
 .intro-section{
-  max-width: 85vw;
-  margin: 0 auto;
+  width: 85vw;
+  max-width: 1550px;
+  margin: 5rem auto 5rem;
+  position: relative;
 }
-.intro-section > h3{
-  font-size: 1.4rem;
-  font-weight: 500;
-  max-width: 1000px;
-  text-align: center;
-  margin-bottom: 6rem;
-}
-
 .intro-section > h4{
   font-weight: 300;
   font-size: 1.1rem;
+  color: white;
+  background-color: black;
+  padding: 6rem 4rem;
+  text-align: center;
+}
+.intro-img{
+  display: none;
+  border: 0.1rem solid black;
 }
 .main{
   margin-bottom: 9rem;
@@ -115,7 +133,8 @@ h3{
   max-width: 1610px;
   margin: 0 auto 4rem;
   overflow: hidden; 
-  background-color: rgb(204, 230, 204,0.7);
+  /* background-color: rgb(204, 230, 204,0.7); */
+  background-color: rgb(255, 202, 122,0.7);
 }
 .featured-card:hover{
   scale: 1.02;
@@ -482,14 +501,24 @@ h3{
 }
 
 .link-btn{
-  text-transform: capitalize;
+  font-family: 'Exo',-apple-system, sans-serif;
+  text-transform: uppercase;
   font-size: 0.85rem;
   border: none;
   background-color: transparent;
   font-weight: 600;
-  padding: 0 1rem 1rem;
+  padding: 0 0.9rem 1rem;
+  position: relative;
 }
-
+.link-arrow{
+  margin-left: 0.2rem;
+  position: absolute;
+  z-index: -1;
+  transition: var(--transition);
+}
+.link-arrow.rotate{
+  transform: rotate(180deg);
+}
 .btn{
   background-color: black;
   color: white;
@@ -761,7 +790,7 @@ th,td{
     align-items: center;
     margin: 0 auto 5rem;
     width: 85vw;
-    max-width: 1080px;
+    max-width: 1550px;
   }
   .recipe-container{
     height: 22rem;
@@ -792,7 +821,7 @@ th,td{
     width: 85vw;
     max-width: 1080px;
   }
-  .intro-section > h3, .main > h3{
+  .main > h3{
     font-size: 1.6rem;
   }
   .featured-info{
@@ -829,6 +858,7 @@ th,td{
   }
   .link-btn{
     font-size: 1.1rem;
+    padding: 0 1.7rem 1rem;
   }
   .submenu a{
     font-size: 1rem;
@@ -888,7 +918,7 @@ th,td{
   .recipes{
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .intro-section > h3, .main > h3{
+  .main > h3{
     font-size: 2rem;
   }
   .featured-card{
@@ -916,5 +946,43 @@ th,td{
   }
   .footer-links li{
     font-size: 1.3rem;
+  }
+  .intro-section{
+    margin: 5rem auto 21rem;
+  }
+  .intro-section > h4{
+    position: absolute;
+  top: 300px;
+  left: 400px;
+  }
+  .intro-img{
+    display: block;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .intro-side-img{
+    display: block;
+  }
+  .left-side{
+    left: -700px;
+  }
+  .right-side{
+    right: 0;
+    width: 107px;
+    object-fit: cover;
+  }
+}
+@media screen and (min-width: 1950px) {
+  .intro-side-img{
+    display: block;
+  }
+  .left-side{
+    left: -620px;
+  }
+  .right-side{
+    right: 0;
+    width: 177px;
+    object-fit: cover;
   }
 }
