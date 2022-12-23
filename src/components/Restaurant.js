@@ -3,6 +3,7 @@ import Axios from 'axios';
 import { HiOutlineMail, HiOutlineLocationMarker, HiOutlinePhone,HiOutlineExternalLink } from 'react-icons/hi';
 import { GeoapifyGeocoderAutocomplete, GeoapifyContext } from "@geoapify/react-geocoder-autocomplete";
 import "@geoapify/geocoder-autocomplete/styles/minimal.css";
+import notFoundImg from '../images/not-found.png';
 
 const Restaurant = () => {
   const GEOAPI_KEY = '138121f2b688405ebe2aec6e64d47bc1';
@@ -82,7 +83,10 @@ const Restaurant = () => {
       </GeoapifyContext>
 
       { notFound ? 
-      <h1>Not found</h1> 
+      <div className='not-found-container'>
+        <img src={notFoundImg} className='not-found-img' alt='result not found'/>
+        <h1 className='not-found-text'>No nearby restaurants found in selected address</h1> 
+      </div>
       :
       <section className="rest-container">
         {restaurants.map((item) => {
