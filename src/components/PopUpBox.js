@@ -67,7 +67,7 @@ export default function PopUpBox(){
                                     {item.links.map((link,index) => {
                                         const {url,icon,label} = link
                                         return (
-                                            <a className="item" href={url} key={index}>
+                                            <a className="item" href={url} key={index} target='_blank' rel='noopener noreferrer'>
                                                 {icon}
                                                 <p>{label}</p>
                                             </a>
