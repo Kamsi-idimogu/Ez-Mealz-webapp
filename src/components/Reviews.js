@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FiChevronRight, FiChevronLeft } from 'react-icons/fi';
 import reviewsData from './data/review-data';
+import ReviewStars from './ReviewStars';
 
 const Reviews = () => {
     const [reviews, updateReviews] = useState(reviewsData);
@@ -51,7 +52,7 @@ const Reviews = () => {
                     <div className="review-titles">
                         <h4 className="review-title">{review.title}</h4>
                         <h5 className="review-recipe-title"><i>{review.recipe}</i></h5>
-                        <div className="review-stars">placeholder for stars</div>
+                        <ReviewStars rating={review.rating}/>
                     </div>
                     </div>
                     <nav className="review-desc">{review.info}</nav>

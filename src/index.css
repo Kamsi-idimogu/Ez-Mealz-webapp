@@ -442,6 +442,8 @@ h3{
 }
 .review-stars{
   font-size: 12px;
+  color: var(--clr-gold);
+  margin-top: 2px;
 }
 .prev, .next{
   width: 2rem;
@@ -894,6 +896,9 @@ th,td{
   }
   .review-recipe-title{
     font-size: 0.83rem;
+  }
+  .review-stars{
+    font-size: 16px;
   }
   .restaurant-section{
     width: 85vw;
