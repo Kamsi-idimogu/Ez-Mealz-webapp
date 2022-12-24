@@ -130,59 +130,89 @@ h3{
   gap: 5rem;
   padding: 2rem 3rem;
   margin-bottom: 4rem;
-  max-width: 1610px;
+  max-width: 1550px;
   margin: 0 auto 4rem;
   overflow: hidden; 
   /* background-color: rgb(204, 230, 204,0.7); */
   background-color: rgb(255, 202, 122,0.7);
 }
-.featured-card:hover{
+.featured-data:hover{
   scale: 1.02;
 }
-.featured-icon{
+.featured-icon-left, .featured-icon-right{
   position: absolute;
-  left: -10%;
   color: var(--clr-grey-1);
   font-size: 2.5rem;
   margin: 0;
   padding: 0;
   display: none;
 }
-.featured-card > img{
+.featured-icon-right{
+  left: -8%;
+}
+.featured-icon-left{
+  right: -8%;
+}
+.featured-data > a{
+  /* margin-right: 1rem; */
   width: 50%;
   flex-shrink: 0;
-  margin-right: 1rem;
 }
-.featured-card > a{
-  margin-right: 1rem;
-  width: 50%;
-  flex-shrink: 0;
-}
-.featured-card > a > img{
+.featured-data a > img{
   width: 100%;
+  /* height: 100%; */
+  /* height: 450px; */
+  /* object-fit: cover; */
+  padding: 5px;
 }
 .left{
   align-self: flex-end;
 }
-.right{
-  align-self: flex-start;
+.strip-left, .strip-right{
+  height: 48px;
+  width: 90%;
+  display: none;
+  background-color: var(--clr-grey-1);
+  position: absolute;
+  z-index: -1;
+}
+.strip-right{
+  right: -20%;
+}
+.strip-left{
+  left: -90%;
 }
 .featured-card{
-  max-width: 450px;
   height: 250px;
   display: flex;
   align-items: center;
   position: relative;
+  z-index: 1;
+}
+.featured-data{
+  max-width: 800px;
+  height: 100%;
+  display: flex;
+  align-items: center;
   background-color: var(--clr-grey-10);
   border: 0.15rem solid var(--clr-gold);
+  z-index: 1;
+  position: relative;
+  transition: var(--transition);
 }
 .featured-info > h2{
   font-size: 0.7rem;
   font-weight: 500;
   color: var(--clr-gold);
 }
+.featured-info-desc > p{
+  font-size: 0.4rem;
+}
 .featured-info > p{
   font-size: 0.4rem;
+}
+.short-desc{
+  display: none;
 }
 .right.hidden{
   transform: translateX(50%);
@@ -768,6 +798,24 @@ th,td{
   cursor: pointer;
 }
 
+@media screen and (max-width: 349px) {
+  .featured-data{
+    height: 180px;
+  }
+  .featured-box{
+    gap: 0.5rem;
+  }
+  .featured-card{
+    height: 190px;
+  }
+  .long-desc{
+    display: none;
+  }
+  .short-desc{
+    display: block;
+  }
+}
+
 @media screen and (min-width: 350px) {
   .recipe-container > h3{
     font-size:1.5rem;
@@ -784,8 +832,14 @@ th,td{
   .intro-section > h4{
     font-size: 1.3rem;
   }
+  .featured-info{
+    padding-right: 0.3rem;
+  }
   .featured-info > h2{
     font-size: 0.8rem;
+  }
+  .featured-info-desc > p{
+    font-size: 0.45rem;
   }
   .featured-info > p{
     font-size: 0.45rem;
@@ -848,10 +902,14 @@ th,td{
   .main > h3{
     font-size: 1.6rem;
   }
+  .featured-data a > img{
+    height: 230px;
+    padding: 0.6rem;
+  }
   .featured-info{
     padding-right: 1rem;
   }
-  .featured-icon{
+  .featured-icon-left, .featured-icon-right, .strip-left, .strip-right{
     display: block;
   }
   .featured-card > a{
@@ -916,16 +974,23 @@ th,td{
   .featured-card{
     height: 350px;
   }
-  .featured-card{
-    max-width: 550px;
+  .featured-data{
+    max-width: 600px;
+  }
+  .featured-data a > img{
+    padding: 0.7rem;
+    height: 100%;
   }
   .featured-info > h2{
     font-size: 1.3rem;
   }
+  .featured-info-desc > p{
+    font-size: 0.7rem;
+  }
   .featured-info > p{
     font-size: 0.7rem;
   }
-  .featured-icon{
+  .featured-icon-left, .featured-icon-right{
     font-size: 3rem;
   }
   .next{ right: -0.1rem; }
@@ -953,8 +1018,10 @@ th,td{
     font-size: 2rem;
   }
   .featured-card{
-    max-width: 800px;
     height: 450px;
+  }
+  .featured-data{
+    max-width: 750px;
   }
   .featured-box{
     padding-left: 5rem;
@@ -962,8 +1029,17 @@ th,td{
   .featured-info > h2{
     font-size: 1.5rem;
   }
+  .featured-info-desc > p{
+    font-size: 0.9rem;
+  }
   .featured-info > p{
     font-size: 0.9rem;
+  }
+  .featured-data a > img{
+    padding: 0.9rem;
+  }
+  .left{
+    margin-right: 2rem;
   }
   .footer-info{
     grid-template-columns: 1fr 1fr 1fr;
@@ -1005,6 +1081,9 @@ th,td{
     right: 0;
     width: 107px;
     object-fit: cover;
+  }
+  .featured-data{
+    max-width: 800px;
   }
 }
 @media screen and (min-width: 1950px) {

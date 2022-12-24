@@ -8,7 +8,10 @@ const featured = [
         buds on every level. Skin-on, bone-in chicken thighs are seasoned simply with salt and lots of pepper, 
         then cooked skin side down in a skillet until the fat renders and you’re left with perfectly crisp skin. 
         You’ll sizzle garlic and a mountain of shallots in the leftover rich schmaltz, which will flavor the sunny 
-        yellow coconut cream and turmeric rice that cooks in the pan with the chicken thighs as the meat finishes roasting.`
+        yellow coconut cream and turmeric rice that cooks in the pan with the chicken thighs as the meat finishes roasting.`,
+        short_description: `Rich, coconutty, schmaltzy, bright, funky, and tangy, this skillet chicken dinner tantalizes the taste 
+        buds on every level. Skin-on, bone-in chicken thighs are seasoned simply with salt and lots of pepper, 
+        then cooked skin side down in a skillet until the fat renders and you’re left with perfectly crisp skin...`
     },
     {
         id: 2,

@@ -82,33 +82,45 @@ const Recipe = () => {
                         if(isLeft){
                             isLeft = false;
                             return(
-                                <div className="featured-card left hidden" key={item.id}>
-                                    <RxDragHandleDots2 className='featured-icon' />
-                                    <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
-                                        <img src={item.image} alt='featured image'/>
-                                    </a>
-                                    <div className="featured-info">
-                                        <h2>{item.title}</h2>
-                                        <p>{item.description}</p>
+                                <div className='featured-card left hidden' key={item.id}>
+                                    <div className='featured-data'>
+                                        <RxDragHandleDots2 className='featured-icon-left' />
+                                        <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
+                                            <img src={item.image} alt='featured image'/>
+                                        </a>
+                                        <div className='featured-info'>
+                                            <h2>{item.title}</h2>
+                                            {item.id === 1 ? 
+                                                <div className='featured-info-desc'> 
+                                                    <p className='short-desc'>{item.short_description}</p>
+                                                    <p className='long-desc'>{item.description}</p> 
+                                                </div>
+                                                : 
+                                                <p>{item.description}</p>
+                                            }
+                                        </div>
                                     </div>
+                                    <div className="strip-left"/>
                                 </div>
                             )
                         }
                         else{
                             isLeft = true;
                             return(
-                                <div className="featured-card right hidden" key={item.id}>
-                                    <RxDragHandleDots2 className='featured-icon' />
-                                    <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
-                                        <img src={item.image} alt='featured image'/>
-                                    </a>
-                                    <div className="featured-info">
-                                        <h2>{item.title}</h2>
-                                        <p>{item.description}</p>
+                                <div className='featured-card right hidden' key={item.id}>
+                                    <div className='featured-data'>
+                                        <RxDragHandleDots2 className='featured-icon-right' />
+                                        <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
+                                            <img src={item.image} alt='featured image'/>
+                                        </a>
+                                        <div className="featured-info">
+                                            <h2>{item.title}</h2>
+                                            <p>{item.description}</p>
+                                        </div>
                                     </div>
+                                    <div className="strip-right"/>
                                 </div>
                             )
-
                         }
                     })}
                 </section>
