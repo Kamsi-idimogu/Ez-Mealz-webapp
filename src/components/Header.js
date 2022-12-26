@@ -67,7 +67,7 @@ const Header = () => {
             <img src={backgroundImg} alt='bk image' className='intro-side-img left-side'/>
             <section className='intro-section' onMouseOver={handleSubmenu}>
                 <img src={placeholder} alt='intro image' className='intro-img'/>
-                <h4><i> Our goal is to help people find and try new recipes and discover great restaurants in their area.</i></h4>
+                <h4><i> Our goal is to help people find and try new recipes and discover excellent restaurants in their neighbourhood.</i></h4>
             </section>
             <img src={backgroundImg} alt='bk image' className='intro-side-img right-side'/>
         </div>

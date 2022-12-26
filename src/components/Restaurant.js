@@ -71,8 +71,20 @@ const Restaurant = () => {
 
   return (
     <section className="restaurant-section">
-      <h1 id='eat_out'>Discover great restaurants in their area</h1>
-      <div className="container"></div>
+      <h1 id='eat_out'>Discover great restaurants in your area</h1>
+      <div className='restaurant-header'>
+        <div className='restaurant-header-text'>
+          <p>Our restaurant locator finds establishments around your address and obtains relevant data about the restaurant.</p>
+        </div>
+        <iframe className='google-map'
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d184551.80858433802!2d-79.51814052141697!3d43.718403810686645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4cb90d7c63ba5%3A0x323555502ab4c477!2sToronto%2C%20ON%2C%20Canada!5e0!3m2!1sen!2sus!4v1655181713058!5m2!1sen!2sus" 
+          width="600" 
+          style={{border:'0'}} 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+        />
+      </div>
 
       <GeoapifyContext apiKey={GEOAPI_KEY} >
         <GeoapifyGeocoderAutocomplete

@@ -672,6 +672,31 @@ th,td{
 }
 .restaurant-section{
   margin: 0 auto;
+  max-width: 1740px;
+}
+#eat_out{
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: overline;
+  margin-bottom: 5rem;
+}
+.restaurant-header{
+  display: flex;
+  background-color: var(--clr-green-7);
+  align-content: center;
+  margin-bottom: 5rem;
+}
+.restaurant-header-text{
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 500;
+}
+.google-map{
+  flex-shrink: 0;
+  width: 50%;
+  aspect-ratio: 1/1;
 }
 .rest-container{
   width: 70vw;
@@ -902,7 +927,6 @@ th,td{
   }
   .restaurant-section{
     width: 85vw;
-    max-width: 1080px;
   }
   .main > h3{
     font-size: 1.6rem;
