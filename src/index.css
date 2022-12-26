@@ -704,6 +704,11 @@ th,td{
   margin-top: 2rem;
   display: flex;
   justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.geoapify-close-button{
+  margin-right: 20px;
 }
 .rest-container{
   width: 70vw;
@@ -736,6 +741,7 @@ th,td{
 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 3rem;
+  overflow-x: scroll;
 }
 .restaurant-card > div{
   padding: 0 1rem 1rem;
@@ -830,7 +836,7 @@ th,td{
 .grey:hover{
   color: var(--icon-grey1);
   cursor: pointer;
-}
+}  
 
 @media screen and (max-width: 349px) {
   .featured-data{
