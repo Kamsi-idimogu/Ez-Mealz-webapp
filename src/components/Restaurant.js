@@ -86,6 +86,8 @@ const Restaurant = () => {
         />
       </div>
 
+      <h3 className='search-box-header'>Enter an address in the search box to find nearby restaurants</h3>
+
       <GeoapifyContext apiKey={GEOAPI_KEY} >
         <GeoapifyGeocoderAutocomplete
           placeholder="Enter address here"

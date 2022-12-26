@@ -111,7 +111,7 @@ h3{
 .main{
   margin-bottom: 9rem;
 }
-.main > h3{
+.main > h3, .search-box-header{
   max-width: 70vw;
   margin: 0 auto;
   font-weight: 300;
@@ -698,6 +698,11 @@ th,td{
   width: 50%;
   aspect-ratio: 1/1;
 }
+.geocoder-container{
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
 .rest-container{
   width: 70vw;
   max-width: 800px;
@@ -928,7 +933,7 @@ th,td{
   .restaurant-section{
     width: 85vw;
   }
-  .main > h3{
+  .main > h3, .search-box-header{
     font-size: 1.6rem;
   }
   .featured-data a > img{
@@ -1043,7 +1048,7 @@ th,td{
   .recipes{
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .main > h3{
+  .main > h3, .search-box-header{
     font-size: 2rem;
   }
   .featured-card{
