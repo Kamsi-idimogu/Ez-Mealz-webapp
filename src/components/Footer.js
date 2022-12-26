@@ -12,9 +12,9 @@ const Footer = () => {
                 </div>
                 <div className="footer-links">
                     <ul>
-                        <a href="#"><li>Home</li></a>
-                        <a href="#"><li>Featured</li></a>
-                        <a href="#"><li>Restaurants</li></a>
+                        <a href='#Home'><li>Home</li></a>
+                        <a href="#Featured"><li>Featured</li></a>
+                        <a href="#eat_out"><li>Restaurants</li></a>
                     </ul>
                 </div>
                 <div className="follow-us">

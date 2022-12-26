@@ -75,7 +75,7 @@ const Recipe = () => {
     return(
         <>
             <div className="main">
-                <h3>Browse our selection of recipes and restaurants, or use our search bar to find something specific.</h3>
+                <h3 id='Featured'>Browse our selection of recipes and restaurants, or use our search bar to find something specific.</h3>
                 <div className="featured-box-background">
                 <section className="featured-box">
                     {featured.map((item) => {

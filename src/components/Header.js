@@ -40,7 +40,7 @@ const Header = () => {
         <>
             <div className="header-container" onMouseOver={handleSubmenu}>
                 <header className="header" onMouseOver={handleSubmenu}>
-                    <h1>Ez Mealz</h1>
+                    <h1 id='Home'>Ez Mealz</h1>
 
                     <ul className="header-links">
                     <li>
