@@ -316,7 +316,7 @@ h3{
   align-items: center;
 }
 
-.recipe-ingredient-btn, .recipe-instruction-btn{
+.recipe-ingredient-btn, .recipe-instruction-btn, .clr-btn{
   height: 2rem;
   width: 80%;
   border-radius: 0.4rem;
@@ -330,11 +330,11 @@ h3{
   background-color: var(--clr-grey-9);
 }
 
-.recipe-instruction-btn{
+.recipe-instruction-btn, .clr-btn{
   color: white;
   background-color: black;
 }
-.recipe-instruction-btn:hover{
+.recipe-instruction-btn:hover, .clr-btn:hover{
   background-color: hsl(210, 22%, 49%);
 }
 
@@ -714,6 +714,13 @@ th,td{
   width: 70vw;
   max-width: 800px;
   margin: 3rem auto 0;
+  display: flex;
+  flex-direction: column;
+}
+.clr-btn{
+  width: 167px;
+  margin: 0 auto;
+  justify-self: center;
 }
 .restaurant-item{
   display: flex;
@@ -854,6 +861,9 @@ th,td{
   .short-desc{
     display: block;
   }
+  .clr-btn{
+    scale: 0.7;
+  }
 }
 
 @media screen and (min-width: 350px) {
@@ -919,7 +929,7 @@ th,td{
     width: 80%;
     margin: 0 auto;
   }
-  .recipe-ingredient-btn, .recipe-instruction-btn{
+  .recipe-ingredient-btn, .recipe-instruction-btn, .clr-btn{
     height: 2.3rem;
   }
   .profile-pic{

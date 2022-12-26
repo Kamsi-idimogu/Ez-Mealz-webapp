@@ -63,10 +63,13 @@ const Restaurant = () => {
   
   if(closeBtn.length !== 0){
     closeBtn.forEach((btn) => {btn.onclick = function() {
-    UpdateRestaurants([]);
-    setNotFound(false)
-
+      clearRestaurants()
   }})
+  }
+
+  function clearRestaurants(){
+    UpdateRestaurants([])
+    setNotFound(false)
   }
 
   return (
@@ -133,6 +136,7 @@ const Restaurant = () => {
             </div> 
           )
         })}
+        { restaurants.length ? <button onClick={clearRestaurants} className='clr-btn' >Clear Result</button> : <></> }
       </section>
       }
     </section>
