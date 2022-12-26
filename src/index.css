@@ -673,6 +673,7 @@ th,td{
 .restaurant-section{
   margin: 0 auto;
   max-width: 1740px;
+  width: 100%;
 }
 #eat_out{
   text-align: center;
@@ -681,7 +682,6 @@ th,td{
   margin-bottom: 5rem;
 }
 .restaurant-header{
-  display: flex;
   background-color: var(--clr-green-7);
   align-content: center;
   margin-bottom: 5rem;
@@ -692,11 +692,12 @@ th,td{
   text-align: center;
   padding: 1rem;
   font-weight: 500;
+  aspect-ratio: 2/1;
 }
 .google-map{
   flex-shrink: 0;
-  width: 50%;
-  aspect-ratio: 1/1;
+  width: 100%;
+  aspect-ratio: 2/1;
 }
 .geocoder-container{
   margin-top: 2rem;
@@ -930,9 +931,6 @@ th,td{
   .review-stars{
     font-size: 16px;
   }
-  .restaurant-section{
-    width: 85vw;
-  }
   .main > h3, .search-box-header{
     font-size: 1.6rem;
   }
@@ -1044,6 +1042,19 @@ th,td{
   }
 }
 
+@media screen and (min-width: 745px) {
+  .restaurant-header{
+    display: flex;
+  }
+  .google-map{
+    width: 50%;
+    aspect-ratio: 1/1;
+  }
+  .restaurant-header-text{
+    font-size: large;
+  }
+}
+
 @media screen and (min-width: 1050px) {
   .recipes{
     grid-template-columns: 1fr 1fr 1fr;
@@ -1074,6 +1085,9 @@ th,td{
   }
   .left{
     margin-right: 2rem;
+  }
+  .restaurant-header-text{
+    font-size: larger;
   }
   .footer-info{
     grid-template-columns: 1fr 1fr 1fr;
@@ -1118,6 +1132,9 @@ th,td{
   }
   .featured-data{
     max-width: 800px;
+  }
+  .restaurant-header-text{
+    font-size: 1.4rem;
   }
 }
 @media screen and (min-width: 1950px) {
