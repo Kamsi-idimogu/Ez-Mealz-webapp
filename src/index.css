@@ -748,7 +748,7 @@ th,td{
 
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 3rem;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 .restaurant-card > div{
   padding: 0 1rem 1rem;
