@@ -750,11 +750,21 @@ th,td{
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   margin-bottom: 3rem;
   overflow-x: auto;
+  position: relative;
 }
 .restaurant-card > div{
   padding: 0 1rem 1rem;
 }
-
+.restaurant-status{
+  position: absolute;
+  right: -0.3rem;
+  top: 0.3rem;
+  padding: 1rem;
+  scale: 0.6;
+  margin: 0;
+  background-color: var(--clr-grey-9);
+  text-transform: uppercase;
+}
 .restaurant-card > img{
   object-fit: cover;
   width: 100%;
@@ -1045,6 +1055,10 @@ th,td{
   }
   .next{ right: -0.1rem; }
 
+  .restaurant-status{
+    scale: 0.8;
+    right: 0.3rem;
+  }  
   .copyright > div{
     font-size: large;
   }

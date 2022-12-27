@@ -110,6 +110,11 @@ const Restaurant = () => {
           if(item.name)
           return(
             <div className="restaurant-card" key={item.location_id}>
+              {item.is_closed ? 
+                <p style={{color:'red', border: '1px solid red'}} className='restaurant-status'>closed</p> 
+                : 
+                <p style={{color:'green', border: '1px solid green'}} className='restaurant-status'>open</p>
+              }
               <img src={item.photo ? item.photo.images.large.url : "https://media-cdn.tripadvisor.com/media/photo-w/0e/65/c0/cf/ma-der-la-by-phuthai.jpg"} alt="Restaurant logo"/>
               <div>
                 <h4>{item.name}</h4>
