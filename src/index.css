@@ -1191,8 +1191,13 @@ th,td{
     object-fit: cover;
   }
   .rest-container{
+    max-width: unset;
     display: grid;
     grid-template-columns: 800px 800px;
-    gap: 1rem;
+    gap: 3rem;
+    justify-content: center;
+  }
+  .clr-btn{
+    grid-column: 1/-1;
   }
 }
