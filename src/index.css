@@ -1190,4 +1190,9 @@ th,td{
     width: 177px;
     object-fit: cover;
   }
+  .rest-container{
+    display: grid;
+    grid-template-columns: 800px 800px;
+    gap: 1rem;
+  }
 }
