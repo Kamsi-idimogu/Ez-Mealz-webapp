@@ -1,3 +1,6 @@
+import featuredImg4 from '../../images/featured-image-4.png'
+import featuredImg3 from '../../images/featured-image-3.png'
+
 const featured = [
     {
         id: 1,
@@ -25,7 +28,7 @@ const featured = [
     {
         id: 3,
         weburl: 'https://www.bbcgoodfood.com/recipes/smoky-spiced-jollof-rice-coconut-fried-plantain',
-        image: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/jollof-rice-d838187.jpg?quality=90&webp=true&resize=440,400',
+        image: featuredImg3,
         title: 'Smoky spiced Jollof rice & coconut-fried plantain',
         description: `This West African inspired dish food is full of bold, harmonious flavours. 
         Jollof rice is a household staple, often accompanied by fried plantain.`
@@ -33,7 +36,7 @@ const featured = [
     {
         id: 4,
         weburl: 'https://www.epicurious.com/recipes/food/views/ba-syn-grilled-corn-and-steak-fattoush-recipe#intcid=_epicurious-bottom-recirc_4a66c65b-c442-4858-95c7-ebf53b39ab05_cral2-2',
-        image: 'https://assets.epicurious.com/photos/636b9ce85a3a51a00f881fe0/1:1/w_2240,c_limit/0728-steak-fattoush-recipe-lede.jpg',
+        image: featuredImg4,
         title: 'Grilled Corn and Steak Fattoush',
         description: `This grilled corn and steak fattoush fits the vacation-friendly bill perfectly, 
         demanding nothing more of you than a few bowls and a hot grill by the pool, grass in your toes.`
