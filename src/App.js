@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Restaurant from "./components/Restaurants";
+import Restaurant from "./components/Restaurant";
 import Header from "./components/Header";
 import Submenu from "./components/Submenu";
 import PopUpBox from "./components/PopUpBox";
