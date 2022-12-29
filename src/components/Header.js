@@ -22,7 +22,7 @@ const Header = () => {
             document.getElementById('cuisine').classList.remove('rotate')
 
         }
-        else if(title == 'Cuisine'){
+        else if(title === 'Cuisine'){
             document.getElementById('cuisine').classList.add('rotate')
             document.getElementById('recipe').classList.remove('rotate')
         }
