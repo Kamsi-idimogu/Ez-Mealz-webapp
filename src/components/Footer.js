@@ -31,9 +31,9 @@ const Footer = () => {
                 <div className="contact-us">
                     <ul>
                         <li className='footer-title'>Contact Us</li>
-                        <li><a href="#"> 433-554-0000</a></li>
-                        <li><a href="#">ezMealz@info.contact.ca</a></li>
-                        <li><a href="#">ZZ 0Fx 3ht sjaswf, ginta sas</a></li>
+                        <li className='contact-item'>41X-999-9999</li>
+                        <li className='contact-item'>ezMealz@info.contact.ca</li>
+                        <li className='contact-item'>ZZ 0Fx 3ht sjaswf, ginta sas</li>
                     </ul>
                 </div>
 

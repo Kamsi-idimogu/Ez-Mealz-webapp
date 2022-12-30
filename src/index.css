@@ -809,8 +809,9 @@ th,td{
   text-decoration: none;
   color: black;
 }
-.footer a:hover{
+.footer a:hover, .contact-item:hover{
   color: var(--clr-green-3);
+  cursor: pointer;
 }
 .footer ul{
   list-style-type: none;
