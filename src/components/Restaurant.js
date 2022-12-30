@@ -28,7 +28,7 @@ const Restaurant = () => {
       params: {
           latitude: coordinates[1], //better to make it 5 decimal places (could be more or less)
           longitude: coordinates[0], //better to make it 5 decimal places (could be more or less)
-          limit: '15',
+          limit: '16',
           currency: 'USD',
           distance: '2',
           open_now: 'false',
