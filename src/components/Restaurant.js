@@ -119,7 +119,7 @@ const Restaurant = () => {
                 item.photo ? 
                   item.photo.images.large.url 
                   : 
-                  `https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=600&height=400&center=lonlat:${item.longitude},${item.latitude}&zoom=15.6&marker=lonlat:${item.longitude},${item.latitude};color:%23ff0000;size:medium&apiKey=${GEOAPI_KEY}`
+                  `https://maps.geoapify.com/v1/staticmap?style=osm-liberty&width=600&height=400&center=lonlat:${item.longitude},${item.latitude}&zoom=15.6&marker=lonlat:${item.longitude},${item.latitude};color:%23ff0000;size:medium&apiKey=${GEOAPI_KEY}`
                 } 
                 alt={item.address}
               />
