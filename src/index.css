@@ -107,6 +107,7 @@ h3{
 .intro-img{
   display: none;
   border: 0.1rem solid black;
+  width: 600px;
 }
 .main{
   margin-bottom: 9rem;
@@ -915,7 +916,7 @@ th,td{
   }
 }
 
-@media screen and (min-width: 506px) {
+@media screen and (min-width: 556px) {
   .nav-btn{
     display: none;
   }
@@ -1142,18 +1143,23 @@ th,td{
     font-size: 1.3rem;
   }
   .intro-section{
-    margin: 5rem auto 21rem;
-  }
-  .intro-section > h4{
-    position: absolute;
-  top: 300px;
-  left: 400px;
-  }
-  .intro-img{
-    display: block;
+    margin: 5rem auto 10rem;
   }
   .not-found-img{
     width: 30rem;
+  }
+}
+@media screen and (min-width: 1300px) {
+  .intro-img{
+    display: block;
+  }
+  .intro-section > h4{
+    position: absolute;
+    top: 300px;
+    left: 400px;
+  }
+  .intro-section{
+    margin: 5rem auto 21rem;
   }
 }
 

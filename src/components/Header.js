@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import {AppContext} from '../AppContext';
 import { FaBars } from 'react-icons/fa';
 import { BsChevronDown } from 'react-icons/bs';
-import placeholder from '../images/eating-food-placeholder.png';
+import placeholder from '../images/people-eating-1.jpg';
 import backgroundImg from '../images/background-pattern-1.jpg';
 
 
@@ -40,7 +40,7 @@ const Header = () => {
         <>
             <div className="header-container" onMouseOver={handleSubmenu}>
                 <header className="header" onMouseOver={handleSubmenu}>
-                    <h1 id='Home'>Ez Mealz</h1>
+                    <h1 id='Home'>Eazy Mealz</h1>
 
                     <ul className="header-links">
                     <li>
