@@ -115,7 +115,14 @@ const Restaurant = () => {
                 : 
                 <p style={{color:'green', border: '1px solid green'}} className='restaurant-status'>open</p>
               }
-              <img src={item.photo ? item.photo.images.large.url : "https://media-cdn.tripadvisor.com/media/photo-w/0e/65/c0/cf/ma-der-la-by-phuthai.jpg"} alt="Restaurant logo"/>
+              <img src={
+                item.photo ? 
+                  item.photo.images.large.url 
+                  : 
+                  `https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=600&height=400&center=lonlat:${item.longitude},${item.latitude}&zoom=15.6&marker=lonlat:${item.longitude},${item.latitude};color:%23ff0000;size:medium&apiKey=${GEOAPI_KEY}`
+                } 
+                alt={item.address}
+              />
               <div>
                 <h4>{item.name}</h4>
                 <div className="restaurant-item">
