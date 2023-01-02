@@ -134,8 +134,8 @@ h3{
   max-width: 1550px;
   margin: 0 auto 4rem;
   overflow: hidden; 
-  /* background-color: rgb(204, 230, 204,0.7); */
-  background-color: rgb(255, 202, 122,0.7);
+  background-color: rgb(204, 230, 204,0.7);
+  /* background-color: rgb(255, 202, 122,0.7); */
 }
 .featured-data:hover{
   scale: 1.02;
@@ -155,16 +155,18 @@ h3{
   right: -8%;
 }
 .featured-data > a{
-  /* margin-right: 1rem; */
-  width: 50%;
-  flex-shrink: 0;
+  width: 100%;
+  height: 50%;
 }
 .featured-data a > img{
   width: 100%;
-  /* height: 100%; */
-  /* height: 450px; */
-  /* object-fit: cover; */
   padding: 5px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1rem 1rem 0 0;
+}
+.featured-info{
+  padding: 0 0.5rem 0.5rem;
 }
 .left{
   align-self: flex-end;
@@ -200,6 +202,8 @@ h3{
   z-index: 1;
   position: relative;
   transition: var(--transition);
+  border-radius: 1rem;
+  flex-direction: column;
 }
 .featured-info > h2{
   font-size: 0.7rem;
@@ -859,14 +863,8 @@ th,td{
 }  
 
 @media screen and (max-width: 349px) {
-  .featured-data{
-    height: 180px;
-  }
   .featured-box{
     gap: 0.5rem;
-  }
-  .featured-card{
-    height: 190px;
   }
   .long-desc{
     display: none;
@@ -895,6 +893,9 @@ th,td{
   .intro-section > h4{
     font-size: 1.3rem;
   }
+  .featured-box{
+    gap: 3.5rem;
+  }
   .featured-info{
     padding-right: 0.3rem;
   }
@@ -905,7 +906,7 @@ th,td{
     font-size: 0.45rem;
   }
   .featured-info > p{
-    font-size: 0.45rem;
+    font-size: 0.55rem;
   }
   .not-found-img{
     width: 15rem;
@@ -915,7 +916,17 @@ th,td{
     max-width: 15rem;
   }
 }
-
+@media screen and (min-width: 450px){
+  .featured-info > h2{
+    font-size: 0.85rem;
+  }
+  .featured-info-desc > p{
+    font-size: 0.55rem;
+  }
+  .featured-info > p{
+    font-size: 0.65rem;
+  }
+}
 @media screen and (min-width: 556px) {
   .nav-btn{
     display: none;
@@ -964,9 +975,18 @@ th,td{
   .main > h3, .search-box-header{
     font-size: 1.6rem;
   }
+  .featured-data{
+    flex-direction: row;
+  }
+  .featured-data > a{
+    width: 50%;
+    flex-shrink: 0;
+    height: unset;
+  }
   .featured-data a > img{
     height: 230px;
     padding: 0.6rem;
+    border-radius: 1rem 0 0 1rem;
   }
   .featured-info{
     padding-right: 1rem;
