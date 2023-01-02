@@ -80,6 +80,7 @@ h3{
   
   background-color: #3f7b3f;
   background-size: 100%;
+  background-clip: text;
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
