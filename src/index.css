@@ -26,6 +26,8 @@
   --icon-red-1: #F55A5A;
   --icon-red-2: #DA2D7A;
 
+  --stripe-clr-green: #8DA68C;
+
 
   --transition: all 0.3s linear;
 }
@@ -70,6 +72,18 @@ h3{
   margin: 120px auto;
   text-transform: uppercase;
   font-weight: 600;
+
+  -webkit-text-stroke: 0.5px #3d9a3d;
+  font-weight: bolder;
+
+  background-image: linear-gradient(#232523, #388638);
+  
+  background-color: #3f7b3f;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
 }
 .header{
   padding: 2rem 0.5rem 0;
@@ -100,7 +114,7 @@ h3{
   font-weight: 300;
   font-size: 1.1rem;
   color: white;
-  background-color: black;
+  background-image: linear-gradient(to left top, #385a38 0%/*bottom-right color*/,#3c483c 50% /*middle color*/, #232523 100% /*top-left color*/);
   padding: 6rem 4rem;
   text-align: center;
 }
@@ -142,7 +156,7 @@ h3{
 }
 .featured-icon-left, .featured-icon-right{
   position: absolute;
-  color: var(--clr-grey-1);
+  color: var(--stripe-clr-green);
   font-size: 2.5rem;
   margin: 0;
   padding: 0;
@@ -160,10 +174,8 @@ h3{
 }
 .featured-data a > img{
   width: 100%;
-  padding: 5px;
   height: 100%;
   object-fit: cover;
-  border-radius: 1rem 1rem 0 0;
 }
 .featured-info{
   padding: 0 0.5rem 0.5rem;
@@ -175,7 +187,8 @@ h3{
   height: 48px;
   width: 90%;
   display: none;
-  background-color: var(--clr-grey-1);
+  /* #9AA396 */
+  background-color: var(--stripe-clr-green);
   position: absolute;
   z-index: -1;
 }
@@ -204,6 +217,7 @@ h3{
   transition: var(--transition);
   border-radius: 1rem;
   flex-direction: column;
+  overflow: hidden;
 }
 .featured-info > h2{
   font-size: 0.7rem;
@@ -571,6 +585,7 @@ h3{
   align-items: center;
   justify-content: center;
   margin-right: 0.7rem;
+  background-color: #3c483c;
 }
 .nav-btn:hover{
   background-color: rgb(0, 0, 0,0.7);
@@ -977,6 +992,7 @@ th,td{
   }
   .featured-data{
     flex-direction: row;
+    overflow: unset;
   }
   .featured-data > a{
     width: 50%;
@@ -1110,6 +1126,15 @@ th,td{
   .restaurant-section > h1{
     font-size: 1.7rem;
   }
+  .header-container > h3{
+    color: black;
+    -webkit-text-stroke: unset;
+    font-weight: 600;
+    background-image: unset;
+    background-color: black;
+    -webkit-text-fill-color: unset;
+    -moz-text-fill-color: unset;
+  }
 }
 
 @media screen and (min-width: 1050px) {
@@ -1187,6 +1212,9 @@ th,td{
   .intro-side-img{
     display: block;
   }
+  .main > h3{
+    margin-top: 3.4rem;
+  }
   .left-side{
     left: -880px;
   }
@@ -1201,10 +1229,14 @@ th,td{
   .restaurant-header-text{
     font-size: 1.4rem;
   }
+  .intro-section > h4{
+    background-image: none;
+    background-color: black;
+  }
 }
 @media screen and (min-width: 1950px) {
   .main > h3{
-    margin-top: 3rem;
+    margin-top: 6rem;
   }
   .left-side{
     left: -810px;
