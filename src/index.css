@@ -880,7 +880,7 @@ th,td{
 
 @media screen and (max-width: 349px) {
   .featured-box{
-    gap: 0.5rem;
+    gap: 2rem;
   }
   .long-desc{
     display: none;
