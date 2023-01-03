@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import Axios from 'axios';
 import { AppContext } from '../AppContext';
 import { AiOutlineSearch } from 'react-icons/ai';
@@ -14,8 +14,6 @@ const Recipe = () => {
     const [recipeList, UpdateRecipeList] = useState([]);   
     const {openPopUp,updateYOffSet} = useContext(AppContext)
 
-    const [isLoaded, setIsloaded] = useState(false);
-
     const fetchRecipe = async(searchSring) => {
         const response = 
           await Axios.get(`https://api.edamam.com/search?q=${searchSring}&app_id=${APP_ID}&app_key=${APP_KEY}`);
@@ -28,47 +26,33 @@ const Recipe = () => {
         UpdateTimeoutId(timeout);
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if(entry.isIntersecting){
-                entry.target.classList.add('visible');
-            }
-            else{
-                entry.target.classList.remove('visible');
-            }
-        });
-    });
-
+    
     const handlePopUp = (content) => {
         openPopUp(content)
-
+        
         updateYOffSet(window.scrollY);
-
+        
         const appElement = document.querySelectorAll('.App');
-
+        
         appElement.forEach((e) => e.classList.add('show'))
         
     }
 
-    const hiddenElements = document.querySelectorAll('.hidden');
-    
-    if(isLoaded){
-        hiddenElements.forEach((ele) => observer.observe(ele))
-    }
-    useEffect(() => {
-        const handleLoad = event => {
-            setIsloaded(true)
-        };
-        
-        const element = window;
-        
-        element.addEventListener('load', handleLoad);
-        
-        return () => {
-            element.removeEventListener('load', handleLoad);
-        };
-        }
-    ,[]);
+    const elements = document.querySelectorAll('.featured-card');
+    elements.forEach(ele => ele.classList.remove('visible'));
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting){
+                entry.target.classList.add('visible');
+                return;
+            }
+
+            entry.target.classList.remove('visible');
+        });
+    });
+
+    document.querySelectorAll('.hidden').forEach(ele => observer.observe(ele));
 
     let isLeft = true;
     
@@ -82,7 +66,7 @@ const Recipe = () => {
                         if(isLeft){
                             isLeft = false;
                             return(
-                                <div className='featured-card left hidden' key={item.id}>
+                                <div className='featured-card left hidden visible' key={item.id}>
                                     <div className='featured-data'>
                                         <RxDragHandleDots2 className='featured-icon-left' />
                                         <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
@@ -107,7 +91,7 @@ const Recipe = () => {
                         else{
                             isLeft = true;
                             return(
-                                <div className='featured-card right hidden' key={item.id}>
+                                <div className='featured-card right hidden visible' key={item.id}>
                                     <div className='featured-data'>
                                         <RxDragHandleDots2 className='featured-icon-right' />
                                         <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
