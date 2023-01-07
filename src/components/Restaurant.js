@@ -26,8 +26,8 @@ const Restaurant = () => {
       method: 'GET',
       url: 'https://travel-advisor.p.rapidapi.com/restaurants/list-by-latlng',
       params: {
-          latitude: coordinates[1], //better to make it 5 decimal places (could be more or less)
-          longitude: coordinates[0], //better to make it 5 decimal places (could be more or less)
+          latitude: coordinates[1],
+          longitude: coordinates[0], 
           limit: '16',
           currency: 'USD',
           distance: '2',
