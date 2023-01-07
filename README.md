@@ -11,7 +11,7 @@ This website provides a wide selection of food recipes that are categorized base
 
 * View detailed information about each recipe, including ingredients and instructions for preparation
 
-* Find restaurants in your area by entering your address
+* Enter an address to find nearby restaurants
 
 * View restaurant profiles with information such as contact details, restaurant address, and restaurant website
 
