@@ -59,6 +59,10 @@ const Restaurant = () => {
     // console.log(value);
   }
 
+  function suppress() {
+    console.warn = () => {}
+  }
+
   const closeBtn = document.querySelectorAll('.geoapify-close-button');
   
   if(closeBtn.length !== 0){
@@ -97,6 +101,7 @@ const Restaurant = () => {
           placeSelect={onPlaceSelect}
           suggestionsChange={onSuggectionChange}
         />
+        { suppress() }
       </GeoapifyContext>
 
       { notFound ? 

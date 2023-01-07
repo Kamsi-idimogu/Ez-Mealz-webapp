@@ -1209,7 +1209,7 @@ th,td{
   }
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1500px) {
   .intro-side-img{
     display: block;
   }
