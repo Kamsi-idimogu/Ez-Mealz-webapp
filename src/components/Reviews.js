@@ -20,7 +20,7 @@ const Reviews = () => {
     useEffect(() => {
         const autoSlide = setInterval(() => {
             stepForward();
-        },5000) // runs every 5000ms(5 seconds)
+        },7000) // runs every 7000ms(7 seconds)
     
         return () => clearInterval(autoSlide) //clean-up function
     
