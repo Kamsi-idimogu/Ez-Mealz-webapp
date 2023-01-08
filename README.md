@@ -15,5 +15,4 @@ This website provides a wide selection of food recipes that are categorized base
 
 * View restaurant profiles with information such as contact details, restaurant address, and restaurant website
 
-Find the website [here](https://github.com/Kamsi-idimogu/Ez-Mealz-webapp)
-**`Note: Link will be updated shortly`**
+Find the website [here](https://kamsi-idimogu.github.io/Ez-Mealz-webapp/)
