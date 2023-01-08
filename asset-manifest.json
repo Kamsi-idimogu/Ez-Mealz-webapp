@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Ez-Mealz-webapp/static/css/main.aabc87c6.css",
+    "main.js": "/Ez-Mealz-webapp/static/js/main.52c958d9.js",
+    "static/media/featured-image-1.png": "/Ez-Mealz-webapp/static/media/featured-image-1.93cfe2c5822c131a2227.png",
+    "static/media/featured-image-4.png": "/Ez-Mealz-webapp/static/media/featured-image-4.afd9ccc218178fde8004.png",
+    "static/media/featured-image-2.png": "/Ez-Mealz-webapp/static/media/featured-image-2.2ebe9dcbf5c7d45617e4.png",
+    "static/media/featured-image-3.png": "/Ez-Mealz-webapp/static/media/featured-image-3.881644786d681949a42c.png",
+    "static/media/bck-img-1.png": "/Ez-Mealz-webapp/static/media/bck-img-1.5ccfad5232bb69967a0f.png",
+    "static/media/eating-food-placeholder.png": "/Ez-Mealz-webapp/static/media/eating-food-placeholder.2acfbb808b08bfd17044.png",
+    "static/media/banner1.jpeg": "/Ez-Mealz-webapp/static/media/banner1.8485966286b257de5efa.jpeg",
+    "static/media/people-eating-1.jpg": "/Ez-Mealz-webapp/static/media/people-eating-1.c73395583848c73e7078.jpg",
+    "static/media/not-found.png": "/Ez-Mealz-webapp/static/media/not-found.2d2c6ee352de3daf8a56.png",
+    "static/media/banner2.jpeg": "/Ez-Mealz-webapp/static/media/banner2.10102cf03347f1f10c34.jpeg",
+    "static/media/background-pattern-1.jpg": "/Ez-Mealz-webapp/static/media/background-pattern-1.c30391a91bfa6902f337.jpg",
+    "index.html": "/Ez-Mealz-webapp/index.html",
+    "main.aabc87c6.css.map": "/Ez-Mealz-webapp/static/css/main.aabc87c6.css.map",
+    "main.52c958d9.js.map": "/Ez-Mealz-webapp/static/js/main.52c958d9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aabc87c6.css",
+    "static/js/main.52c958d9.js"
+  ]
+}
