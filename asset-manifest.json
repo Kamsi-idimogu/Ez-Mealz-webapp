@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Ez-Mealz-webapp/static/css/main.aabc87c6.css",
-    "main.js": "/Ez-Mealz-webapp/static/js/main.52c958d9.js",
+    "main.css": "/Ez-Mealz-webapp/static/css/main.e68903ef.css",
+    "main.js": "/Ez-Mealz-webapp/static/js/main.5d61be70.js",
     "static/media/featured-image-1.png": "/Ez-Mealz-webapp/static/media/featured-image-1.93cfe2c5822c131a2227.png",
     "static/media/featured-image-4.png": "/Ez-Mealz-webapp/static/media/featured-image-4.afd9ccc218178fde8004.png",
     "static/media/featured-image-2.png": "/Ez-Mealz-webapp/static/media/featured-image-2.2ebe9dcbf5c7d45617e4.png",
@@ -14,11 +14,11 @@
     "static/media/banner2.jpeg": "/Ez-Mealz-webapp/static/media/banner2.10102cf03347f1f10c34.jpeg",
     "static/media/background-pattern-1.jpg": "/Ez-Mealz-webapp/static/media/background-pattern-1.c30391a91bfa6902f337.jpg",
     "index.html": "/Ez-Mealz-webapp/index.html",
-    "main.aabc87c6.css.map": "/Ez-Mealz-webapp/static/css/main.aabc87c6.css.map",
-    "main.52c958d9.js.map": "/Ez-Mealz-webapp/static/js/main.52c958d9.js.map"
+    "main.e68903ef.css.map": "/Ez-Mealz-webapp/static/css/main.e68903ef.css.map",
+    "main.5d61be70.js.map": "/Ez-Mealz-webapp/static/js/main.5d61be70.js.map"
   },
   "entrypoints": [
-    "static/css/main.aabc87c6.css",
-    "static/js/main.52c958d9.js"
+    "static/css/main.e68903ef.css",
+    "static/js/main.5d61be70.js"
   ]
 }
