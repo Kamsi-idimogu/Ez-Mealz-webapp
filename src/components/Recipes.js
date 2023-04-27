@@ -70,7 +70,7 @@ const Recipe = () => {
                                     <div className='featured-data'>
                                         <RxDragHandleDots2 className='featured-icon-left' />
                                         <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
-                                            <img src={item.image} alt='featured image'/>
+                                            <img src={item.image} alt='featured'/>
                                         </a>
                                         <div className='featured-info'>
                                             <h2>{item.title}</h2>
@@ -95,7 +95,7 @@ const Recipe = () => {
                                     <div className='featured-data'>
                                         <RxDragHandleDots2 className='featured-icon-right' />
                                         <a href={item.weburl} target='_blank' rel='noopener noreferrer'>
-                                            <img src={item.image} alt='featured image'/>
+                                            <img src={item.image} alt='featured'/>
                                         </a>
                                         <div className="featured-info">
                                             <h2>{item.title}</h2>
@@ -122,17 +122,17 @@ const Recipe = () => {
                     <div className="recipes">{recipeList.map((item,index) => {
                         return (
                             <div className="recipe-container" key={index}>
-                            <img alt='Meal image' src={item.recipe.image} className='recipe-img'/>
-                            <h3>{item.recipe.label}</h3>
+                            <img alt='Meal' src={item.recipe.image} className='recipe-img'/>
+                            <p className='recipe-header'>{item.recipe.label}</p>
                             <div className="recipe-btns">
-                              <button className="recipe-ingredient-btn" onClick={() => handlePopUp(item.recipe)}>Ingredient</button>
-                              <button className="recipe-instruction-btn" onClick={() => window.open(item.recipe.url)}>Instructions</button>
+                              <span className="recipe-ingredient-btn" onClick={() => handlePopUp(item.recipe)}>Ingredient</span>
+                              <span className="recipe-instruction-btn" onClick={() => window.open(item.recipe.url)}>Instructions</span>
                             </div>
                           </div>
                         );
                     })}</div> 
                     : 
-                    <img src={placeholder} className='placeholder-img'/>
+                    <img src={placeholder} className='placeholder-img' alt='placeholder'/>
             }
         </> 
     )

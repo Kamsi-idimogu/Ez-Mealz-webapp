@@ -44,19 +44,19 @@ const Header = () => {
 
                     <ul className="header-links">
                     <li>
-                        <button className='link-btn' onMouseOver={showSubMenu}>Recipes<BsChevronDown id='recipe' className='link-arrow'/></button> 
+                        <nav className='link-btn' onMouseOver={showSubMenu}>Recipes<BsChevronDown id='recipe' className='link-arrow'/></nav> 
                     </li>
                     <li>
-                        <button className="link-btn" onMouseOver={showSubMenu}>Cuisine<BsChevronDown id='cuisine' className='link-arrow'/></button>
+                        <nav className="link-btn" onMouseOver={showSubMenu}>Cuisine<BsChevronDown id='cuisine' className='link-arrow'/></nav>
                     </li>
                     <li>
-                    <a href='#eat_out'><button onMouseOver={closeSubMenu} className="link-btn header-btn">Eat out</button></a>
+                        <nav onMouseOver={closeSubMenu}><a href='#eat_out' className="link-btn header-btn">Eat out</a></nav>
                     </li>
                     </ul>
 
-                    <button className='btn nav-btn' onClick={openSidebar}>
+                    <nav className='btn nav-btn' onClick={openSidebar}>
                         <FaBars/>
-                    </button>
+                    </nav>
             </header>
             <h3>Welcome to Eazy Mealz, 
                 where you can find a wide selection of delicious food recipes and nearby restaurants

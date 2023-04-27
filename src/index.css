@@ -200,7 +200,7 @@ h3{
   left: -90%;
 }
 .featured-card{
-  height: 250px;
+  height: 300px;
   display: flex;
   align-items: center;
   position: relative;
@@ -303,6 +303,8 @@ h3{
   flex-direction: column;
   background-color: var(--clr-grey-10);
   transition: all 0.3s linear;
+  justify-content: center;
+  gap: 0.5rem;
 }
 .recipe-container:hover{
   scale: 1.05;
@@ -316,18 +318,12 @@ h3{
   border: 0.25rem solid var(--clr-green-7);
   border-radius: 0.3rem;
 }
-.recipe-container > h3{
-  flex: 1;
-
-  font-size:1.2rem;
-
-  width: 80%;
-  margin: 0 auto;
+.recipe-header{
+  font-weight: 700;
+  font-size: 150%;
+  max-width: 100%;
   text-align: center;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0;
 }
 .recipe-btns{
   display: flex;
@@ -340,10 +336,16 @@ h3{
   height: 2rem;
   width: 80%;
   border-radius: 0.4rem;
-  border: solid 0.1rem var(--clr-grey-9);
   border: solid 0.1rem black;
   font-size: 1rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.recipe-ingredient-btn{
+  color: black;
+  background-color: var(--clr-green-10);
 }
 
 .recipe-ingredient-btn:hover{
@@ -351,8 +353,8 @@ h3{
 }
 
 .recipe-instruction-btn, .clr-btn{
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: var(--clr-green-7);
 }
 .recipe-instruction-btn:hover, .clr-btn:hover{
   background-color: hsl(210, 22%, 49%);
@@ -476,8 +478,8 @@ h3{
   position: absolute;
   top: 50%;
 }
-.prev{ left: -0.6rem; }
-.next{ right: 0.2rem; }
+.prev{ left: 0; }
+.next{ right: 0; }
 
 .prev:hover, .next:hover{
   color: var(--clr-light-gold);
@@ -562,6 +564,8 @@ h3{
   font-weight: 600;
   padding: 0 0.9rem 1rem;
   position: relative;
+  text-decoration: none;
+  color: black;
 }
 .link-arrow{
   margin-left: 0.2rem;
@@ -894,9 +898,6 @@ th,td{
 }
 
 @media screen and (min-width: 350px) {
-  .recipe-container > h3{
-    font-size:1.5rem;
-  }
   .review-card, .review-cards{
     height: 310px;
   }

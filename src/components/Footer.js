@@ -20,12 +20,12 @@ const Footer = () => {
                 <div className="follow-us">
                     <ul>
                         <li className='footer-title'>Follow Us</li>
+                        <li><a href='https://github.com/Kamsi-idimogu' target='_blank' rel="noreferrer"><FaGithub className='footer-icon grey'/></a></li>
                         <li><FaFacebookSquare className='footer-icon blue'/></li>
                         <li><FaInstagram className='footer-icon red'/></li>
                         <li><FaTiktok className='footer-icon grey'/></li>
                         <li><FaLinkedinIn className='footer-icon blue'/></li>
                         <li><FaTwitter className='footer-icon blue'/></li>
-                        <li><FaGithub className='footer-icon grey'/></li>
                     </ul>
                 </div>
                 <div className="contact-us">

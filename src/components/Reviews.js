@@ -29,7 +29,7 @@ const Reviews = () => {
     return(
         <div className="reviews-container">
         <nav className="reviews">
-            <button className="prev" onClick={stepBackward}><FiChevronLeft/></button>
+            <span className="prev" onClick={stepBackward}><FiChevronLeft/></span>
             <div className="review-cards">
                 {reviews.map((review,currentIndex) => {
     
@@ -61,7 +61,7 @@ const Reviews = () => {
                 }
                 
             </div>
-            <button className="next" onClick={stepForward}><FiChevronRight/></button>
+            <span className="next" onClick={stepForward}><FiChevronRight/></span>
         </nav>
         </div>
     );

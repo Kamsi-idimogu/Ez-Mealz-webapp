@@ -27,9 +27,9 @@ export default function PopUpBox(){
         <>{isPopUpOpen ? 
         <aside className={isSidebarOpen ? 'sidebar-background show':'sidebar-background'}>  {/* Ingredients Pop-up box */}
             <div className={`sidebar ${isSidebarOpen ? 'show':''}`}>
-                <button className="close-btn" onClick={handleClose}>
+                <span className="close-btn" onClick={handleClose}>
                     <FaTimes/>
-                </button>
+                </span>
                 <div className="message-content">
                     <p>{popUpMessage.label}</p>
                     <table className="t">
